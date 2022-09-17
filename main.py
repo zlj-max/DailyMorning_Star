@@ -17,13 +17,13 @@ def get_color():
 
 def get_access_token():
     # appId
-    app_id = config["app_id"]
+    app_id = config["APP_ID"]
     # appSecret
-    app_secret = config["app_secret"]
+    app_secret = config["APP_SECRET"]
     post_url = ("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={}&secret={}"
                 .format(app_id, app_secret))
     try:
-        access_token = get(post_url).json()['access_token']
+        access_token = get(post_url).json()['TEMPLATE_ID']
     except KeyError:
         print("获取access_token失败，请检查app_id和app_secret是否正确")
         os.system("pause")
